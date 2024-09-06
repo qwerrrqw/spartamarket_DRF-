@@ -5,6 +5,7 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.permissions import IsAuthenticated
 
 
 
@@ -27,6 +28,8 @@ class UserListAPIView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class UserDetailAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+    
     def get_object(self, pk):
         return get_object_or_404(User, pk=pk)
     
@@ -53,6 +56,8 @@ class UserDetailAPIView(APIView):
 # 로그인, 로그아웃
 
 class LogoutAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+    
     def post(self, request):
         try:
             refresh_token = request.data["refresh"]
