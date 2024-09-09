@@ -73,3 +73,15 @@ class PasswordChangeSerializer(serializers.Serializer):
         user = self.context['request'].user
         user.set_password(self.validated_data['new_password'])
         user.save()
+        
+        
+# 회원 탈퇴시 비밀번호 검증, CRU와 D의 역할을 명확히 구분하기 위해서 serializer 따로 작성
+
+class UserDeleteSerializer(serializers.Serializer):
+    password = serializers.CharField(write_only=True) # 비밀번호 입력을 위한 필드
+    
+    def validate_password(self, value):
+        user = self.context['request'].user
+        if not check_password(value, user.password):  # 입력된 비밀번호가 기존 비밀번호와 일치하는지 확인
+            raise serializers.ValidationError("비밀번호가 일치하지 않습니다.")
+        return value

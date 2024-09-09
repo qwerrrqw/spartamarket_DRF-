@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from .serializers import UserSerializer, PasswordChangeSerializer
+from .serializers import UserSerializer, PasswordChangeSerializer, UserDeleteSerializer
 from .models import User
 from profiles.models import Profile
 from rest_framework import status
@@ -50,9 +50,13 @@ class UserDetailAPIView(APIView):
             
     def delete(self, request, pk): # 회원 탈퇴
         user = self.get_object(pk)
-        user.delete()
-        data = {"delete": f"user({pk}) is deleted."}
-        return Response(data, status=status.HTTP_200_OK)
+        
+        serializer = UserDeleteSerializer(data=request.data, context={'request':request})
+        if serializer.is_valid(raise_exception=True):
+            user.delete()
+            data = {"delete": f"user({pk}) is deleted."}
+            return Response(data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     
 # 로그인, 로그아웃
