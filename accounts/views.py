@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404
-from .serializers import UserSerializer
+from .serializers import UserSerializer, PasswordChangeSerializer
 from .models import User
+from profiles.models import Profile
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -24,7 +25,8 @@ class UserListAPIView(APIView):
     def post(self, request): # 회원 생성
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
-            serializer.save()
+            user = serializer.save()
+            Profile.objects.create(user=user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class UserDetailAPIView(APIView):
@@ -65,6 +67,17 @@ class LogoutAPIView(APIView):
             token.blacklist()
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
-            print(f"ㅜㅜㅜㅜㅜㅜ: {e}")
+            print(f"엉엉: {e}")
             return Response(status=status.HTTP_400_BAD_REQUEST)
-            
+
+# 비밀번호 변경
+
+class PasswordChangeView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def put(self, request):
+        serializer = PasswordChangeSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"detail": "패스워드가 성공적으로 변경되었습니다."}, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

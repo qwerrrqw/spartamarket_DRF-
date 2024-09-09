@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from .models import User
+from django.contrib.auth.password_validation import validate_password
+from django.contrib.auth.hashers import check_password
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)  # 비밀번호는 쓰기 전용
@@ -30,3 +32,29 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])  # 비밀번호 해싱
         user.save()
         return user
+    
+
+class PasswordChangeSerializer(serializers.Serializer):
+    old_password = serializers.CharField(required = True, write_only =True) # 기존 비밀번호
+    new_password = serializers.CharField(required = True, write_only =True) # 변경할 비밀번호
+    
+    def validate(self, data): # 검증 매서드
+        user = self.context['request'].user
+        
+        if data['old_password'] == data['new_password']: # 기존 비밀번호와 변경할 비밀번호가 같으면 오류 메시지 출력
+            raise serializers.ValidationError("새 패스워드는 기존 패스워드와 달라야 합니다.")
+
+        if not check_password(data['old_password'], user.password): # 사용자가 입력한 기존 비밀번호가 해싱된 비밀번호와 일치하는지 검증
+            raise serializers.ValidationError("기존 패스워드가 맞지 않습니다.")
+        
+        try:
+            validate_password(data['new_password'], user)
+        except serializers.ValidationError as e:
+            raise serializers.ValidationError({'new_password': e.messages})
+        
+        return data
+    
+    def save(self, **kwargs):
+        user = self.context['request'].user
+        user.set_password(self.validated_data['new_password'])
+        user.save()

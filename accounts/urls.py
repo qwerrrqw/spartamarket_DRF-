@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 from rest_framework_simplejwt.views import(TokenObtainPairView, TokenRefreshView, TokenVerifyView,)
 
-app_name = "accounts"
+
+
 urlpatterns = [
     # list, detail, CRUD
     path("", views.UserListAPIView.as_view(), name="user_list"),
@@ -13,5 +14,7 @@ urlpatterns = [
     path('token/verify/', TokenVerifyView.as_view(), name='token_verify'), #특정 JWT 토큰(주로 액세스 토큰)이 유효한지 확인
     # 로그아웃
     path('logout/', views.LogoutAPIView.as_view(), name='logout'),
+    # 비밀번호 변경
+    path('password/change/', views.PasswordChangeView.as_view(), name='password_change'),
 
 ]
