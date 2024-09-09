@@ -33,6 +33,21 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         return user
     
+    # 수정시 이메일과 username 중복 방지
+    
+    def validate_email(self, value):
+        user = self.instance
+        if User.objects.filter(email=value).exclude(pk=user.pk).exists(): # pk는 self.instance에서 자동으로 설정된 수정중인 사용자 객체에서 가져옴
+            raise serializers.ValidationError("이미 사용 중인 이메일 입니다.")
+        return value
+        
+    def validate_username(self, value):
+        user = self.instance
+        if User.objects.filter(username=value).exclude(pk=user.pk).exists():
+            raise serializers.ValidationError("이미 사용 중인 username 입니다.")
+        return value
+    
+    
 
 class PasswordChangeSerializer(serializers.Serializer):
     old_password = serializers.CharField(required = True, write_only =True) # 기존 비밀번호
