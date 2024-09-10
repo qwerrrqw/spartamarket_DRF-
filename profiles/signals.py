@@ -6,4 +6,4 @@ from .models import Profile
 @receiver(post_save, sender = settings.AUTH_USER_MODEL)
 def profile(sender, instance, created,**kwargs):
     if created:
-        profile.objects.create(user=instance)
+        Profile.objects.create(user=instance)
