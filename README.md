@@ -56,6 +56,7 @@ startamarket_drf/
 ![회원가입](https://private-user-images.githubusercontent.com/173751168/365873219-00ea8c0a-61a8-4e07-a7bd-ce1cc1ca679e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzY0NjksIm5iZiI6MTcyNTkzNjE2OSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMjE5LTAwZWE4YzBhLTYxYTgtNGUwNy1hN2JkLWNlMWNjMWNhNjc5ZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMjQyNDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00N2M1MmNhMzVhNzM0YWJhZTUwZjM2MDhjOTI3MTQxYjEzZjEzZjExNDA1OWZiNGM5Zjk4NTNmYzhhNTJlYTlhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.MCoyRQ-UUi6I3Izr1gjE-XQSOu9UQhtlra8zJuhSvOY)
 
 - 로그인
+
 엔드포인트: POST -> /api/accounts/login/
 
 설명: 사용자는 username와 비밀번호를 사용하여 로그인하고, 토큰 기반 인증을 통해 API에 접근할 수 있는 토큰을 받습니다.
@@ -63,12 +64,14 @@ startamarket_drf/
 ![로그인](https://private-user-images.githubusercontent.com/173751168/365873172-377d39ff-e43b-463e-9418-3b932230aac8.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzY2NjUsIm5iZiI6MTcyNTkzNjM2NSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMTcyLTM3N2QzOWZmLWU0M2ItNDYzZS05NDE4LTNiOTMyMjMwYWFjOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMjQ2MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05ZDIzZGEzY2Q2OTMzNmM0NWRmMTU0ZTE1NTEyOGM5YjZhNDRhNTE3MjYzNmRhYTZmM2M3Y2Y5ZjY0ZGFmOThmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.-zHrbfrz8nLrccjQ0zjw8nEOx9LEkAqCZDxA8xNbt48)
 
 - 로그아웃
+
 엔드포인트: POST -> api/accounts/logout/
 
 설명: 로그인된 사용자의 토큰 블랙리스트 처리하여 로그아웃합니다.
 
 
 - 회원 정보 수정
+
 엔드포인트: PUT -> api/accounts/{pk}/
 
 설명: 회원의 username ,email, author, nickname, first_name, PR등을 수정 할 수 있습니다. username과 email은 중복검사를 실시합니다.
@@ -76,6 +79,7 @@ startamarket_drf/
 ![회원 정보 수정](https://private-user-images.githubusercontent.com/173751168/365873215-b7e57428-4a6c-40f3-8984-a45ea818be00.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzY2NjUsIm5iZiI6MTcyNTkzNjM2NSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMjE1LWI3ZTU3NDI4LTRhNmMtNDBmMy04OTg0LWE0NWVhODE4YmUwMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMjQ2MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01YzJhMzAyZTU2ZDdlMzcwMTM5NGJiY2U3MTYxZTUzOGUyOTE3YTE1ODBmZDFjOTAyYmI5N2JiYWY3MDk0OTI1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.xbosduTMVky2gAmC_nT5_KGKuzu0bNTSgM4c2TROdkM)
 
 - 비밀번호 변경
+
 엔드포인트: PUT -> /api/accounts/password/change/
 
 설명: 기존 비밀번호와 새비밀번호를 각각 검증하여 비밀번호 변경을 진행. 단, 기존 비밀번호가 일치하지 않거나, 새 비밀번호가 보안에 취약하다면 다시 입력 받습니다.
@@ -84,6 +88,7 @@ startamarket_drf/
 ![비밀번호 변경(실패)](https://private-user-images.githubusercontent.com/173751168/365873186-1b25a038-6bde-4618-865e-43f90e74e3d3.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzY2NjUsIm5iZiI6MTcyNTkzNjM2NSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMTg2LTFiMjVhMDM4LTZiZGUtNDYxOC04NjVlLTQzZjkwZTc0ZTNkMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMjQ2MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zM2IwNzgwMzcxOGJmYWJmMDVhNjQ5ZTg0NGJkNWE1ZDhiODZkODliYzY2YWVhNmFiM2RiMzUyOGFkOWNlOGI1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.C0j9VV2CVRW9WpJUSje5h5B49PwpXsKefhMVLkXq9kQ)
 
 - 프로필 조회
+
 엔드포인트: GET -> /api/profiles/{username}/
 
 설명: 사용자는 자신 또는 다른 사용자의 프로필 정보를 조회할 수 있습니다.
@@ -91,6 +96,7 @@ startamarket_drf/
 ![프로필 조회](https://private-user-images.githubusercontent.com/173751168/365873207-f79fd72a-336b-4f83-a47c-d5521bdb3e33.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzY2NjUsIm5iZiI6MTcyNTkzNjM2NSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMjA3LWY3OWZkNzJhLTMzNmItNGY4My1hNDdjLWQ1NTIxYmRiM2UzMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMjQ2MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jNTJlNWVlZTBhODgxMDg2MDk3YmNjNDBkNmNiYWExNjU1YzBhYjM0NjcwOWNiNWQwYTNlMDc3M2VjMGUzZjI4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.V8-oOyNwMWoxY752EQkqHETmc1TlTjlAu4Dk8SrqEU4)
 
 - 프로필 수정
+
 엔드포인트: PUT -> /api/profiles/{username}/
 
 설명: 사용자는 자신의 프로필 정보를 수정할 수 있습니다.
@@ -98,6 +104,7 @@ startamarket_drf/
 ![프로필 수정](https://private-user-images.githubusercontent.com/173751168/365873204-d7b55e56-294d-41a8-bcbe-840f46bb26bd.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzY2NjUsIm5iZiI6MTcyNTkzNjM2NSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMjA0LWQ3YjU1ZTU2LTI5NGQtNDFhOC1iY2JlLTg0MGY0NmJiMjZiZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMjQ2MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xOTc5MzNhYTU0MDUyOTIzNmQ5NmFiYTc1NGYwMDhkYTA3ZDY3Yzc5N2IwZjNjOTJlOTIwMjMxM2RiNWUyMjhkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.7-TJhPbGXTXCRdFWy0ZE6zYe3hHIBH2zbxmu3bi-jQw)
 
 - 상품 등록
+
 엔드포인트: POST -> /api/products/
 
 설명: 사용자는 로그인을 통해 인증된 상태에서 새로운 상품을 등록할 수 있습니다.
@@ -106,6 +113,7 @@ startamarket_drf/
 
 
 - 상품 조회
+
 엔드포인트: GET -> /api/products/{pk}/
 
 설명: 등록한 상품의 상세페이지를 볼 수 있습니다.
@@ -115,6 +123,7 @@ startamarket_drf/
 
 
 - 상품 목록
+
 엔드포인트: GET -> /api/products/
 
 설명: 등록된 상품의 목록을 페이지네이션 기능과 함께 조회할 수 있습니다.
@@ -122,6 +131,7 @@ startamarket_drf/
 ![상품 목록](https://private-user-images.githubusercontent.com/173751168/365873196-85952624-2b99-4fb4-995a-aeb2143f3708.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzY2NjUsIm5iZiI6MTcyNTkzNjM2NSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMTk2LTg1OTUyNjI0LTJiOTktNGZiNC05OTVhLWFlYjIxNDNmMzcwOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMjQ2MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yYTk3NDQzYjA3YmJjMjFiYjQwMDM0ZDI2NjcxMzQzYTBiODhmMDRlNjdjYjI2MTc0MDBiNTE0OTIzZDc3ZWNlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.z4plTc5f5_hliuo3EAr0ZLT9Zpr01V76zcbxVpP1ONI)
 
 - 상품 수정
+
 엔드포인트: PUT -> /api/products/{id}/
 
 설명: 사용자는 자신이 등록한 상품 정보를 수정할 수 있습니다.
@@ -129,6 +139,7 @@ startamarket_drf/
 ![상품 수정](https://private-user-images.githubusercontent.com/173751168/365873164-54943ee4-6d3c-4ab7-bcf3-5ea805ed759e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzY2NjUsIm5iZiI6MTcyNTkzNjM2NSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMTY0LTU0OTQzZWU0LTZkM2MtNGFiNy1iY2YzLTVlYTgwNWVkNzU5ZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMjQ2MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lNDcyNjFmZTc1NTM3ODNkODIzOWNiNjlmZWY2N2M4NWVkYTI5ODg3NzY2MzUzOWQ0ODFiZmMyNjRkYjRmYTE3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.5sl5rSA6D8Z7SzxUrUjdau5uYtyIZVwUGhMStVrvhKg)
 
 - 상품 삭제
+
 엔드포인트: DELETE -> /api/products/{id}/
 
 설명: 사용자는 자신이 등록한 상품을 삭제할 수 있습니다.
@@ -136,6 +147,7 @@ startamarket_drf/
 ![상품 삭제](https://private-user-images.githubusercontent.com/173751168/365873188-a26adf1c-a56f-4bda-8911-785e958d3420.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzY2NjUsIm5iZiI6MTcyNTkzNjM2NSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMTg4LWEyNmFkZjFjLWE1NmYtNGJkYS04OTExLTc4NWU5NThkMzQyMC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMjQ2MDVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iNjRlZmJjMGYwMjYxYjljODBlODYxNmQ1ODRhNGFlOTM0YWQzODYwNmYwMGZiNmQ2YjRlYjZkNDUyZGMwYzE3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.NvKGBBJyCm5NOc4QgeQ81KzvaGz05V5dv2ohOFSF8TA)
 
 - 상품 검색
+
 엔드포인트: GET -> /api/products/search/?q=<query>
 
 설명: 사용자는 상품 제목, 사용자 이름 또는 상품 설명을 기준으로 상품을 검색할 수 있습니다.
@@ -145,6 +157,7 @@ startamarket_drf/
 
 
 - 카테고리 생성
+
 엔드포인트: POST -> api/products/category/
 
 설명: admin은 새로운 카테고리를 등록할 수 있습니다. admin 권한이 없는 사용자는 카테고리를 생성할 수 없습니다
