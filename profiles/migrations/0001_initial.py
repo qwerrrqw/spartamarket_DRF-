@@ -21,7 +21,6 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('image', models.ImageField(default='users/user.png', upload_to='images/')),
                 ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
-                ('following', models.ManyToManyField(related_name='followers', to='profiles.profile')),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),

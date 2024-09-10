@@ -37,13 +37,19 @@ class UserSerializer(serializers.ModelSerializer):
     
     def validate_email(self, value):
         user = self.instance
-        if User.objects.filter(email=value).exclude(pk=user.pk).exists(): # pk는 self.instance에서 자동으로 설정된 수정중인 사용자 객체에서 가져옴
-            raise serializers.ValidationError("이미 사용 중인 이메일 입니다.")
+        # self.instance가 None일 수 있기 때문에 이를 처리
+        if user is not None and User.objects.filter(email=value).exclude(pk=user.pk).exists():
+            raise serializers.ValidationError("이미 사용 중인 email 입니다.")
+        elif User.objects.filter(email=value).exists():  # 새로 생성할 때 중복 검사
+            raise serializers.ValidationError("이미 사용 중인 email 입니다.")
         return value
         
     def validate_username(self, value):
         user = self.instance
-        if User.objects.filter(username=value).exclude(pk=user.pk).exists():
+        # self.instance가 None일 수 있기 때문에 이를 처리
+        if user is not None and User.objects.filter(username=value).exclude(pk=user.pk).exists():
+            raise serializers.ValidationError("이미 사용 중인 username 입니다.")
+        elif User.objects.filter(username=value).exists():  # 새로 생성할 때 중복 검사
             raise serializers.ValidationError("이미 사용 중인 username 입니다.")
         return value
     

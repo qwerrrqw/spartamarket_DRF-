@@ -13,9 +13,3 @@ class Profile(models.Model):
     image = models.ImageField(default="users/user.png", upload_to="images/")
     created_at = models.DateTimeField(default=timezone.now)
     PR = models.TextField(blank=True)
-
-    following = models.ManyToManyField(
-        to="self",
-        related_name="followers",
-        symmetrical=False,
-    )
