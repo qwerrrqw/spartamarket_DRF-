@@ -22,12 +22,11 @@ class UserListAPIView(APIView):
         serializer = UserSerializer(user, many=True)
         return Response(serializer.data)
     
-    def post(self, request): # 회원 생성
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            user = serializer.save()
-            Profile.objects.create(user=user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+def post(self, request):  # 회원 생성
+    serializer = UserSerializer(data=request.data)
+    if serializer.is_valid(raise_exception=True):
+        serializer.save()  # 프로필과 장바구니는 신호에서 자동 생성
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class UserDetailAPIView(APIView):
     permission_classes = [IsAuthenticated]
