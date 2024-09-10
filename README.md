@@ -46,11 +46,11 @@ startamarket_drf/
 사용 방법
 
 API 엔드포인트
-회원가입: POST /api/accounts/signup/
-로그인: POST /api/accounts/login/
-프로필: GET /api/profiles/{username}/, PUT /api/profiles/{username}/
-상품: GET /api/products/, POST /api/products/, PUT /api/products/{id}/, DELETE /api/products/{id}/
-상품 검색: GET /api/products/search/?q=<query>
+회원가입: POST /api/accounts/signup/ #
+로그인: POST /api/accounts/login/ #
+프로필: GET /api/profiles/{username}/, PUT /api/profiles/{username}/ #
+상품: GET /api/products/, POST /api/products/, PUT /api/products/{id}/, DELETE /api/products/{id}/ #
+상품 검색: GET /api/products/search/?q=<query> #
 
 - 사용자 회원가입
 엔드포인트: POST -> /api/accounts/signup/
