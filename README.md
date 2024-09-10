@@ -19,15 +19,16 @@ SpartaMarket DRF
 
 프로젝트 구조
 
-startamarket_drf/
-├── accounts/          # 사용자 인증(회원가입, 로그인) 및 계정 관련 기능을 관리합니다.
-├── products/          # 상품 생성, 수정, 삭제 및 목록 조회를 담당합니다.
-├── profiles/          # 사용자 프로필 관리를 처리합니다.
-├── startamarket_drf/  # 프로젝트 설정 파일입니다.
-├── db.sqlite3         # SQLite 데이터베이스 파일입니다.
-├── manage.py          # Django 관리 스크립트입니다.
-├── requirements.txt   # 프로젝트의 의존성 파일입니다.
+startamarket_drf/  
+├── accounts/          # 사용자 인증(회원가입, 로그인) 및 계정 관련 기능을 관리합니다.  
+├── products/          # 상품 생성, 수정, 삭제 및 목록 조회를 담당합니다.  
+├── profiles/          # 사용자 프로필 관리를 처리합니다.  
+├── startamarket_drf/  # 프로젝트 설정 파일입니다.  
+├── db.sqlite3         # SQLite 데이터베이스 파일입니다.  
+├── manage.py          # Django 관리 스크립트입니다.  
+├── requirements.txt   # 프로젝트의 의존성 파일입니다.  
 └── README.md          # 본 파일입니다.
+
 
 설치 방법
 
@@ -45,4 +46,4 @@ startamarket_drf/
 
 설명: 사용자는 회원가입 시 이메일, 사용자 이름, 비밀번호 등의 정보를 제출합니다. 제출 후 프로필이 자동으로 생성됩니다.
 
-![게시글 검색](./images/게시글%20검색.png)
+![회원가입](https://private-user-images.githubusercontent.com/173751168/365873219-00ea8c0a-61a8-4e07-a7bd-ce1cc1ca679e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzY0NjksIm5iZiI6MTcyNTkzNjE2OSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMjE5LTAwZWE4YzBhLTYxYTgtNGUwNy1hN2JkLWNlMWNjMWNhNjc5ZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMjQyNDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00N2M1MmNhMzVhNzM0YWJhZTUwZjM2MDhjOTI3MTQxYjEzZjEzZjExNDA1OWZiNGM5Zjk4NTNmYzhhNTJlYTlhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.MCoyRQ-UUi6I3Izr1gjE-XQSOu9UQhtlra8zJuhSvOY)
