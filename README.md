@@ -45,13 +45,6 @@ startamarket_drf/
 
 사용 방법
 
-API 엔드포인트
-회원가입: POST /api/accounts/signup/  
-로그인: POST /api/accounts/login/  
-프로필: GET /api/profiles/{username}/, PUT /api/profiles/{username}/
-상품: GET /api/products/, POST /api/products/, PUT /api/products/{id}/, DELETE /api/products/{id}/  
-상품 검색: GET /api/products/search/?q=<query>  
-
 - 사용자 회원가입
 엔드포인트: POST -> /api/accounts/signup/
 
@@ -160,7 +153,14 @@ API 엔드포인트
 ![카테고리 생성불가(user)](https://private-user-images.githubusercontent.com/173751168/365873201-60b94298-8ec4-4feb-9ff7-ef62f30db3b6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzgwOTEsIm5iZiI6MTcyNTkzNzc5MSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMjAxLTYwYjk0Mjk4LThlYzQtNGZlYi05ZmY3LWVmNjJmMzBkYjNiNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMzA5NTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zZjg2MjlkM2JhNjg2NGIwZjQzZWNhMzliYTZhZWNjZThlYmI3YTI5NjY4NDcyMWI1OTAzNDhlMWU3NzgyN2FjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.xjywVKBkj2RREeKftaz-5q4SJHRJgXgy-0-kOktbNqU)
 
 사용 기술
+
 Django
 Django Rest Framework
-PostgreSQL (또는 로컬 개발용 SQLite)
-토큰 기반 인증 (DRF Auth)
+SQLite
+토큰 기반 인증 (JWT)
+Python
+
+
+ERD
+
+![ERD](https://private-user-images.githubusercontent.com/173751168/365884256-00614fac-ebe0-4f58-a713-a825d242ad8f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5Mzk5NjQsIm5iZiI6MTcyNTkzOTY2NCwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODg0MjU2LTAwNjE0ZmFjLWViZTAtNGY1OC1hNzEzLWE4MjVkMjQyYWQ4Zi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMzQxMDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00NjFjZDI0YWY0NjE1N2UyYmYyNzc5ZTU3MDQzNzc0Mzg4OGU1MmYyMWE1MDVkYmFkY2M0NWFhZGQ2ZGIzMTE2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.M9M-3QRAEwJXeZrb9F_r9hwbFkmEQSOYIgBnaWpRUNo)
