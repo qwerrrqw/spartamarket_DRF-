@@ -164,3 +164,113 @@ Python
 ERD
 
 ![ERD](https://private-user-images.githubusercontent.com/173751168/365884256-00614fac-ebe0-4f58-a713-a825d242ad8f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5Mzk5NjQsIm5iZiI6MTcyNTkzOTY2NCwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODg0MjU2LTAwNjE0ZmFjLWViZTAtNGY1OC1hNzEzLWE4MjVkMjQyYWQ4Zi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMzQxMDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00NjFjZDI0YWY0NjE1N2UyYmYyNzc5ZTU3MDQzNzc0Mzg4OGU1MmYyMWE1MDVkYmFkY2M0NWFhZGQ2ZGIzMTE2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.M9M-3QRAEwJXeZrb9F_r9hwbFkmEQSOYIgBnaWpRUNo)
+
+# SpartaMarket DRF
+
+This project provides a REST API for user management, profile management, and product management using Django Rest Framework (DRF). The project includes features such as user authentication, profile management, product creation, and search functionalities.
+
+## Key Features
+
+### 1. User Management
+- **Signup**: Users can sign up, and a profile is automatically created upon registration.
+- **Login**: Secure login with token-based authentication.
+- **Password Change**: Users can change their password with validation to ensure it differs from the old one.
+
+### 2. Profile Management
+- **View Profile**: Users can view their profile.
+- **Edit Profile**: Users can update profile information with validation to prevent duplicate emails or usernames.
+
+### 3. Product Management
+- **Create Product**: Logged-in users can create new products.
+- **View Products**: Products can be viewed with pagination.
+- **Edit and Delete Product**: Users can edit or delete products they have created.
+- **Search Product**: Users can search products by title, username, or content.
+
+## Project Structure
+
+```text
+spartamarket_drf/
+├── accounts/          # Manages user authentication and account-related functionality (signup, login).
+├── products/          # Handles product creation, update, deletion, and listing.
+├── profiles/          # Manages user profile data.
+├── spartamarket_drf/  # Project settings.
+├── db.sqlite3         # SQLite database file.
+├── manage.py          # Django management script.
+├── requirements.txt   # Project dependencies.
+└── README.md
+
+## Installation
+1. Clone the repository: `git clone <repository_url>`
+2. Navigate into the project directory: `cd spartamarket_drf`
+3. Install dependencies: `pip install -r requirements.txt`
+4. Apply migrations: `python manage.py migrate`
+5. Create a superuser: `python manage.py createsuperuser`
+6. Run the development server: `python manage.py runserver`
+
+## Usage
+
+### User Signup
+- **Endpoint**: `POST /api/accounts/signup/`
+- Users can sign up by providing an email, username, and password. A profile is automatically created upon signup.
+
+### Login
+- **Endpoint**: `POST /api/accounts/login/`
+- Users can log in using their username and password, and receive a token for authenticated API access.
+
+### Logout
+- **Endpoint**: `POST /api/accounts/logout/`
+- Logged-in users can log out, and their token will be blacklisted.
+
+### Update User Information
+- **Endpoint**: `PUT /api/accounts/{pk}/`
+- Users can update their information such as username, email, and profile details. Username and email are validated to avoid duplicates.
+
+### Change Password
+- **Endpoint**: `PUT /api/accounts/password/change/`
+- Users can change their password by providing the old password and a new password.
+
+### View Profile
+- **Endpoint**: `GET /api/profiles/{username}/`
+- Users can view their own or other users' profile information.
+
+### Edit Profile
+- **Endpoint**: `PUT /api/profiles/{username}/`
+- Users can update their own profile information.
+
+### Create Product
+- **Endpoint**: `POST /api/products/`
+- Logged-in users can create new products.
+
+### View Product
+- **Endpoint**: `GET /api/products/{pk}/`
+- Users can view the details of a specific product.
+
+### View Product List
+- **Endpoint**: `GET /api/products/`
+- Users can view a paginated list of products.
+
+### Edit Product
+- **Endpoint**: `PUT /api/products/{id}/`
+- Users can update products they have created.
+
+### Delete Product
+- **Endpoint**: `DELETE /api/products/{id}/`
+- Users can delete products they have created.
+
+### Search Products
+- **Endpoint**: `GET /api/products/search/?q=<query>`
+- Users can search for products by title, username, or description.
+
+### Create Category (Admin only)
+- **Endpoint**: `POST /api/products/category/`
+- Admin users can create new product categories.
+
+## Technologies Used
+- Django
+- Django Rest Framework
+- SQLite
+- JWT-based authentication
+- Python
+
+## ERD
+![ERD](https://private-user-images.githubusercontent.com/173751168/365884256-00614fac-ebe0-4f58-a713-a825d242ad8f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5Mzk5NjQsIm5iZiI6MTcyNTkzOTY2NCwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODg0MjU2LTAwNjE0ZmFjLWViZTAtNGY1OC1hNzEzLWE4MjVkMjQyYWQ4Zi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMzQxMDRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00NjFjZDI0YWY0NjE1N2UyYmYyNzc5ZTU3MDQzNzc0Mzg4OGU1MmYyMWE1MDVkYmFkY2M0NWFhZGQ2ZGIzMTE2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.M9M-3QRAEwJXeZrb9F_r9hwbFkmEQSOYIgBnaWpRUNo)
