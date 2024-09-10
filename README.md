@@ -45,7 +45,14 @@ startamarket_drf/
 
 사용 방법
 
-사용자 회원가입
+API 엔드포인트
+회원가입: POST /api/accounts/signup/
+로그인: POST /api/accounts/login/
+프로필: GET /api/profiles/{username}/, PUT /api/profiles/{username}/
+상품: GET /api/products/, POST /api/products/, PUT /api/products/{id}/, DELETE /api/products/{id}/
+상품 검색: GET /api/products/search/?q=<query>
+
+- 사용자 회원가입
 엔드포인트: POST -> /api/accounts/signup/
 
 설명: 사용자는 회원가입 시 이메일, 사용자 이름, 비밀번호 등의 정보를 제출합니다. 제출 후 프로필이 자동으로 생성됩니다.
@@ -151,3 +158,9 @@ startamarket_drf/
 ![카테고리 생성(admin)](https://private-user-images.githubusercontent.com/173751168/365873157-d4196d4c-d8a7-4939-83ef-5278b90979cf.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzgwOTEsIm5iZiI6MTcyNTkzNzc5MSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMTU3LWQ0MTk2ZDRjLWQ4YTctNDkzOS04M2VmLTUyNzhiOTA5NzljZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMzA5NTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05NWU3ZjllOTIwY2M2YjQ4OTQ1ZGQ3MGMwNjYzYWVmOWVjNTM4ODExZmQ5NmIxNGE1NTk4NDk4NGRiZDBkMmUwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.n287V-uBtvRI0zcHlbUl5Lukd5z-wQr-gBBwz5fW30Q)
 
 ![카테고리 생성불가(user)](https://private-user-images.githubusercontent.com/173751168/365873201-60b94298-8ec4-4feb-9ff7-ef62f30db3b6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjU5MzgwOTEsIm5iZiI6MTcyNTkzNzc5MSwicGF0aCI6Ii8xNzM3NTExNjgvMzY1ODczMjAxLTYwYjk0Mjk4LThlYzQtNGZlYi05ZmY3LWVmNjJmMzBkYjNiNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwOTEwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxMFQwMzA5NTFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zZjg2MjlkM2JhNjg2NGIwZjQzZWNhMzliYTZhZWNjZThlYmI3YTI5NjY4NDcyMWI1OTAzNDhlMWU3NzgyN2FjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.xjywVKBkj2RREeKftaz-5q4SJHRJgXgy-0-kOktbNqU)
+
+사용 기술
+Django
+Django Rest Framework
+PostgreSQL (또는 로컬 개발용 SQLite)
+토큰 기반 인증 (DRF Auth)
